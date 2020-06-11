@@ -16,14 +16,20 @@ meta viewport 添加`viewport-fit=cover`
 
 该方法是获取刘海屏的状态栏和tabbar
 
+运用环境主要是wap,webview,h5
+
 竖屏和横屏自行转换下
 
 
 
 top(状态栏) = safe-area-inset-top
+
 left = safe-area-inset-left
+
 right = safe-area-inset-right
+
 bottom (tabbar)= safe-area-inset-bottom
+
 
 
 ### 默认导出
