@@ -51,14 +51,14 @@ export default function() {
     if(!isIPhone){
         return {
             statusHeight: 0,
-            tabbarHeight: 0
+            insetBottom: 0
         }
     }
     if(getSupport){
         const { top,bottom } = getSafeAreaInset();
         if(top!=0 || bottom!=0) return {
             statusHeight: top,
-            tabbarHeight: bottom
+            insetBottom: bottom
         };
     }
     const { 
@@ -68,5 +68,11 @@ export default function() {
             height
         }
     } = window;
-    return iosModel[`@${devicePixelRatio}x`][`${width*devicePixelRatio}x${height*devicePixelRatio}`];
+    const model = iosModel[`@${devicePixelRatio}x`],
+        modelScreen = `${width*devicePixelRatio}x${height*devicePixelRatio}`;
+    if(model && model.hasOwnProperty(modelScreen)){
+        return model[modelScreen]
+    } else {
+        return { statusHeight: 0, insetBottom: 0 };
+    }
 };

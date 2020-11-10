@@ -36,4 +36,4 @@ bottom (tabbar)= safe-area-inset-bottom
 
 非苹果手机 返回都为0
 
-获取当前苹果机型的状态栏和tabbar
+获取当前苹果机型的状态栏和底部安全区域
